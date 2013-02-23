@@ -1,0 +1,20 @@
+AMD sound throught HDMI fix
+------------------------
+# Author: Florent Bervas
+# Mail: florentdotme@gmail.com
+# GIT Repository: http://github.com/FlorentDotMe/
+------------------------
+Info:   Related to http://ati.cchtml.com/show_bug.cgi?id=686
+        Driver : AMD Catalyst 12.XX
+        The sound is disabled when you switch output device channel. The fix suggested here is to reconfigure the HDMI device using xrandr.
+
+Files
+------------------------
+amdsoundfix.sh
+    : script able to reconfigure dynamically your HDMI device to fix the sound bug.
+
+Instructions
+------------
+1. Put the script in your /usr/local/bin/ directory.
+2. Scan your devices using "amdsoundfix.sh --scan". You need to run it under user managing Xorg session. It will create a $HOME/.amdsoundfix.cfg configuration file.
+3. When the sound bug occured, execute "amdsoundfix.sh --run" command to fix it.
